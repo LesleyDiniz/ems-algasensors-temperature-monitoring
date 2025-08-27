@@ -57,8 +57,8 @@ public class SensorMonitoringController {
     @SneakyThrows
     public void disable(@PathVariable TSID sensorId){
         SensorMonitoring sensorMonitoring = findByIdOrDefault(sensorId);
-        if(!sensorMonitoring.getEnabled())
-            Thread.sleep(Duration.ofSeconds(10));
+//        if(!sensorMonitoring.getEnabled())
+//            Thread.sleep(Duration.ofSeconds(10));
         sensorMonitoring.setEnabled(false);
         sensorMonitoringRepository.saveAndFlush(sensorMonitoring);
     }
